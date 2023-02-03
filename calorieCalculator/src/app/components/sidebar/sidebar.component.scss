@@ -1,0 +1,100 @@
+.wrapper-sidebar {
+    transition: all 0.5s;
+    -webkit-transition: all 0.25s;
+    .btn-close {
+        position: absolute;
+        right: 10px;
+        padding: 0px;
+        top: -7px;
+        font-size: 3em;
+        color: grey;
+        font-weight: 500;
+        cursor: pointer;
+        background-color: black;
+        transition: 0.5s;
+    }
+
+    .btn-close:hover {
+        color: rgb(9, 203, 142);
+    }
+
+    .sidebar {
+        z-index: 100;
+        margin: 0;
+        padding: 0;
+        width: 300px;
+        background-color: black;
+        position: fixed;
+        height: 100%;
+        overflow: auto;
+    }
+
+    .sidebar a {
+        display: block;
+        color: white;
+        padding: 16px;
+        text-decoration: none;
+        margin-top: 55px;
+        font-size: 18px;
+    }
+
+    .sidebar a.active {
+        background-color: #04aa6d;
+        color: white;
+    }
+
+    .sidebar a:hover:not(.active) {
+        background-color: white;
+        transition: 0.3s;
+        color: white;
+        color: black;
+        letter-spacing: 0.3em;
+        font-size: 1em;
+    }
+
+    div.content {
+        margin-left: 200px;
+        padding: 1px 16px;
+        height: 1000px;
+    }
+
+    @media screen and (max-width: 700px) {
+        .sidebar {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+        .sidebar a {
+            float: left;
+        }
+        div.content {
+            margin-left: 0;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        .sidebar a {
+            text-align: center;
+            float: none;
+        }
+    }
+}
+
+.btn-open {
+    left: 45px;
+    // top: 7px;
+    padding-top: 14px;
+    font-size: 3em;
+    font-weight: 800;
+    z-index: 111;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.5s;
+    -webkit-transition: all 0.25s;
+    position: absolute;
+}
+
+.btn-open:hover {
+    transition: 0.5s;
+    color: rgb(9, 203, 142);
+}

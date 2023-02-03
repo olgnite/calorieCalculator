@@ -1,0 +1,4 @@
+<div class="validation" *ngIf="controls.touched && controls.invalid">
+    <small *ngIf="controls.errors['required']">Required field</small>
+    <small *ngIf="controls.errors['pattern']">Введите пожалуйста число</small>
+</div>

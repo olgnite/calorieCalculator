@@ -1,0 +1,16 @@
+<div class="wrapper-sidebar" *ngIf="isToggle; else show">
+    <nav class="sidebar">
+        <button class="btn-close" (click)="showSidebarHandler()">
+            &times;
+        </button>
+        <div class="routers" *ngFor="let i of sidebarRoutes">
+            <a [routerLink]="[i.path]" (click)="showSidebarHandler()">
+                {{ i.label }}
+            </a>
+        </div>
+    </nav>
+</div>
+
+<ng-template #show>
+    <div class="btn-open" (click)="showSidebarHandler()">☰</div>
+</ng-template>

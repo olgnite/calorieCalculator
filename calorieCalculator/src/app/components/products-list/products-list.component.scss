@@ -1,0 +1,25 @@
+.wrapper-list {
+}
+
+.products-select {
+    padding: 0 10em 0 0;
+    margin: 7%;
+    padding-top: 10px;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    padding: 0 1em;
+    margin: -1px;
+    border-radius: 6px;
+    width: 35%;
+    height: 35px;
+}
+
+.products-select option {
+    font-weight: bold !important;
+    color: black;
+    height: 35px;
+    border-radius: 6px;
+}

@@ -1,0 +1,70 @@
+<div class="form">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="option-field">
+            <div class="weight">
+                <input
+                    id="weight"
+                    type="number"
+                    placeholder="Укажите свой вес"
+                    formControlName="weight"
+                />
+            </div>
+            <app-validation
+                [controls]="form.controls['weight']"
+            ></app-validation>
+            <div class="height">
+                <input
+                    id="height"
+                    type="number"
+                    placeholder="Укажите свой рост"
+                    formControlName="height"
+                />
+            </div>
+            <app-validation
+                [controls]="form.controls['height']"
+            ></app-validation>
+            <div class="age">
+                <input
+                    id="age"
+                    type="number"
+                    placeholder="Укажите свой возраст"
+                    formControlName="age"
+                />
+            </div>
+            <app-validation [controls]="form.controls['age']"></app-validation>
+            <div class="custom-select">
+                <select
+                    class="sex"
+                    formControlName="sex"
+                    style="margin-bottom: 10px"
+                >
+                    <option value="">Выберите пол</option>
+                    <option value="мужчина">мужчина</option>
+                    <option value="женщина">женщина</option>
+                </select>
+            </div>
+            <div class="custom-select">
+                <select class="calculatorType" formControlName="calculatorType">
+                    <option value="">Выберите тип нагрузки</option>
+                    <option *ngFor="let t of types" [value]="t.workType">
+                        {{ t.workType }}
+                    </option>
+                </select>
+            </div>
+            <br />
+            <button type="submit" class="btn" [disabled]="form.invalid">
+                Рассчитать
+            </button>
+        </div>
+        <br />
+        <div class="answer-calorie" *ngIf="isShowDailyRate">
+            <p
+                class="calorie"
+                style="font-size: 18px; color: black; display: block"
+            >
+                Примерная суточная норма калорий -
+                {{ dailyCalculatorService.calories | async }}
+            </p>
+        </div>
+    </form>
+</div>
