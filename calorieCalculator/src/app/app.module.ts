@@ -15,6 +15,8 @@ import { ProductsListComponent } from './components/products-list/products-list.
 import { RequestService } from './services/request.service';
 import { FormOptionsComponent } from './components/form-options/form-options.component';
 import { ValidationComponent } from './components/validation/validation.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
+import { CacheService } from './services/cache.service';
 
 @NgModule({
     declarations: [
@@ -25,7 +27,8 @@ import { ValidationComponent } from './components/validation/validation.componen
         CalculatorDailyCalorieComponent,
         ProductsListComponent,
         FormOptionsComponent,
-        ValidationComponent
+        ValidationComponent,
+        ProductCardComponent
     ],
     imports: [
         CommonModule,
@@ -37,7 +40,8 @@ import { ValidationComponent } from './components/validation/validation.componen
     ],
     providers: [
         DailyCalculatorService,
-        RequestService
+        RequestService,
+        CacheService
     ],
     bootstrap: [AppComponent]
 })

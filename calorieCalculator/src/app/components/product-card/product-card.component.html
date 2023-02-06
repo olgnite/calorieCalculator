@@ -1,0 +1,6 @@
+<div class="wrapper-product" *ngIf="product; else empty">
+    <p>{{ product.productName }}</p>
+    <p>{{ product.productCalorie }}</p>
+</div>
+
+<ng-template #empty> {{ "Продукт не найден" }} </ng-template>

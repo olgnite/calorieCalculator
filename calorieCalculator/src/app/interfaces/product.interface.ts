@@ -8,6 +8,6 @@ export interface IProductsRequest {
 export interface IProduct {
     productName: string;
     productCalorie: number;
-    grams: number;
+    grams?: number;
     productId?: number;
 }

@@ -1,8 +1,11 @@
 <div class="wrapper-list">
     <select class="products-select" id="" (change)="productNameHandler($event)">
         <option value="">Выберите продукт</option>
-        <option *ngFor="let i of products | async" [value]="i.productName">
-            {{ i.productName }}
+        <option *ngFor="let p of products; let i = index" [value]="i + 1">
+            {{ p.productName }}
         </option>
     </select>
+    <div>
+        <app-product-card [product]="product"></app-product-card>
+    </div>
 </div>
