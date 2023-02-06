@@ -1,6 +1,24 @@
-<div class="wrapper-product" *ngIf="product; else empty">
-    <p>{{ product.productName }}</p>
-    <p>{{ product.productCalorie }}</p>
+<div class="wrapper-product">
+    <div *ngIf="product">
+        <div class="product-info">
+            <p>{{ product.productName }}</p>
+            <p>{{ product.productCalorie }}</p>
+        </div>
+        <div class="wrapper-btn">
+            <button class="btn" (click)="calculatedCalorieHandler()">
+                Рассчитать количество грамм на день
+            </button>
+        </div>
+    </div>
+    <div class="calories">
+        <p
+            class="calorie"
+            style="font-size: 18px; color: black; display: block"
+            *ngIf="isShowAmountGrams && calculatedCalories !== '0.00'"
+        >
+            Для того, чтобы закрыть суточную норму калорий необходимо употребить
+            -
+            {{ calculatedCalories }} грамм продукта
+        </p>
+    </div>
 </div>
-
-<ng-template #empty> {{ "Продукт не найден" }} </ng-template>

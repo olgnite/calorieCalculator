@@ -1,9 +1,9 @@
-import { calculatorTypes } from './../../constData';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { regularNum } from 'src/app/constData';
-import { DailyCalculatorService } from 'src/app/services/dailyCalculator.service';
 import { ICalculatorType } from 'src/app/interfaces/calculatorType.interface';
+import { CalculatorCalorieService } from 'src/app/services/calculatorCalorie.service';
+import { calculatorTypes } from './../../constData';
 
 @Component({
     selector: 'app-form-options',
@@ -14,10 +14,11 @@ export class FormOptionsComponent implements OnInit {
     public form: FormGroup | undefined;
     public isShowDailyRate: boolean = false;
     public types: ICalculatorType[] = calculatorTypes;
+    public calories: number | undefined;
 
     constructor(
         private formBuilder: FormBuilder,
-        public dailyCalculatorService: DailyCalculatorService
+        public calculatorCalorie: CalculatorCalorieService
     ) { }
 
     public ngOnInit(): void {
@@ -64,13 +65,18 @@ export class FormOptionsComponent implements OnInit {
             return;
         }
         this.isShowDailyRate = true;
-        this.dailyCalculatorService.dailyRateCalorieCulculate(
+        this.calculatorCalorie.dailyRateCalorieCulculate(
             this.form.value.weight,
             this.form.value.height,
             this.form.value.age,
             this.form.value.sex,
-            this.form.value.calculatorType);
+            this.form.value.calculatorType)
+
+        this.calculatorCalorie.calories
+            .subscribe((calorie: string) => {
+                this.calories = Number(calorie)
+            })
     }
 }
 
-// 1600 -> яблоко -> 130 = 1600 / 130 * 100 (на 100 грамм продукта)
+// 1600 -> яблоко -> 130 = 1600 / 130 * 100 (на 100 грамм продукта) = количество грамм сколько нужно съесть

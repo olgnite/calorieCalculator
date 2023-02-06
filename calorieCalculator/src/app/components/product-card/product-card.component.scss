@@ -1,0 +1,20 @@
+.wrapper-product {
+    .product-info {
+    }
+
+    .wrapper-btn {
+        .btn {
+            border-radius: 6px;
+            width: 20%;
+            height: 35px;
+            background-color: #fff;
+            color: darkorange;
+            cursor: pointer;
+            transition: 0.6s;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: black;
+        }
+    }
+}

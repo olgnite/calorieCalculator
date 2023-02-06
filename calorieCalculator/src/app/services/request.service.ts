@@ -14,7 +14,7 @@ export class RequestService {
     }
 
     public getProducts(index: number): Observable<IProduct[]> {
-        const key: string = `cacheProduct-${index}`
+        const key: string = `cacheProduct-${index}`;
 
         if (!this.cacheService.getCacheData(key)) {
             return this.http.get<IProductsRequest[]>(`${this.baseUrl}/products`)
@@ -34,7 +34,7 @@ export class RequestService {
                     })
                 )
         }
-        return of(this.cacheService.getCacheData<IProduct[]>(key))
+        return of(this.cacheService.getCacheData<IProduct[]>(key));
     }
 
     public getProductById(id: number): Observable<IProduct> {
@@ -43,7 +43,8 @@ export class RequestService {
                 map((p: IProductsRequest) => {
                     return {
                         productName: p.product_name,
-                        productCalorie: p.product_calorie
+                        productCalorie: p.product_calorie,
+                        grams: p.grams
                     }
                 })
             )

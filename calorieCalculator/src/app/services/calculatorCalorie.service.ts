@@ -4,7 +4,7 @@ import { calculatorTypes } from "../constData";
 import { ICalculatorType } from "../interfaces/calculatorType.interface";
 
 @Injectable()
-export class DailyCalculatorService {
+export class CalculatorCalorieService {
     public calories: BehaviorSubject<string | null> = new BehaviorSubject<string | null>(null);
 
     public dailyRateCalorieCulculate(
