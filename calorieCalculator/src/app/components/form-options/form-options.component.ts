@@ -79,4 +79,3 @@ export class FormOptionsComponent implements OnInit {
     }
 }
 
-// 1600 -> яблоко -> 130 = 1600 / 130 * 100 (на 100 грамм продукта) = количество грамм сколько нужно съесть

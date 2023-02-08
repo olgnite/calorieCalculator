@@ -1,5 +1,10 @@
 .wrapper-product {
     .product-info {
+        display: grid;
+        text-align: center;
+        background-color: #fff;
+        width: 20%;
+        border-radius: 6px;
     }
 
     .wrapper-btn {

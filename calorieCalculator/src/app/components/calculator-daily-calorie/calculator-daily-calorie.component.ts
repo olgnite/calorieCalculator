@@ -5,14 +5,9 @@ import { Component, OnInit } from '@angular/core';
     templateUrl: './calculator-daily-calorie.component.html',
     styleUrls: ['./calculator-daily-calorie.component.scss']
 })
-export class CalculatorDailyCalorieComponent implements OnInit {
+export class CalculatorDailyCalorieComponent {
 
-    constructor(
-    ) { }
-
-    public ngOnInit(): void {
-
-    }
+    constructor() { }
 
 }
 

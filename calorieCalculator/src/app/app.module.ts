@@ -28,7 +28,7 @@ import { CalculatorCalorieService } from './services/calculatorCalorie.service';
         ProductsListComponent,
         FormOptionsComponent,
         ValidationComponent,
-        ProductCardComponent
+        ProductCardComponent,
     ],
     imports: [
         CommonModule,
@@ -36,7 +36,7 @@ import { CalculatorCalorieService } from './services/calculatorCalorie.service';
         AppRoutingModule,
         FormsModule,
         ReactiveFormsModule,
-        HttpClientModule
+        HttpClientModule,
     ],
     providers: [
         CalculatorCalorieService,
