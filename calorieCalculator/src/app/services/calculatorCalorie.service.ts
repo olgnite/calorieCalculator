@@ -7,7 +7,7 @@ import { ICalculatorType } from "../interfaces/calculatorType.interface";
 export class CalculatorCalorieService {
     public calories: BehaviorSubject<string | null> = new BehaviorSubject<string | null>(null);
 
-    public dailyRateCalorieCulculate(
+    public dailyRateCalorieCalculate(
         weight: number,
         height: number,
         age: number,
@@ -21,6 +21,10 @@ export class CalculatorCalorieService {
                     ? this.calories.next(((447.6 + (9.2 * weight) + (3.1 * height) - (4.3 * age)) * type.bmrValue).toFixed(2))
                     : 0
         });
+    }
+
+    public getDayGrams(dailyCalories: number, productCalories: number, grams: number): number {
+        return dailyCalories / productCalories * grams;
     }
 }
 

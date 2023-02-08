@@ -65,7 +65,7 @@ export class FormOptionsComponent implements OnInit {
             return;
         }
         this.isShowDailyRate = true;
-        this.calculatorCalorie.dailyRateCalorieCulculate(
+        this.calculatorCalorie.dailyRateCalorieCalculate(
             this.form.value.weight,
             this.form.value.height,
             this.form.value.age,

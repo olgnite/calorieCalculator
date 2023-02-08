@@ -16,8 +16,12 @@ export class ProductCardComponent {
     }
 
     public calculatedCalorieHandler(): void {
-        this.calculatedCalories = (+this.calculatorService.calories.getValue()
-            / this.product.productCalorie * this.product.grams).toFixed(2);
+        this.calculatedCalories = (this.calculatorService
+            .getDayGrams(
+                +this.calculatorService.calories.getValue(),
+                this.product.productCalorie,
+                this.product.grams))
+            .toFixed(2)
         this.isShowAmountGrams = true;
     }
 }
