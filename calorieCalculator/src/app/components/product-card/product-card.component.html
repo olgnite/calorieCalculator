@@ -1,9 +1,9 @@
-<div class="wrapper-product">
-    <div *ngIf="product">
+<div class="wrapper-product" *ngIf="product | async as p">
+    <div>
         <div class="product-info" style="font-size: 18px; color: black">
-            <p>Продукт - {{ product.productName }}</p>
+            <p>Продукт - {{ p.productName }}</p>
             <p>
-                Содержание калорий на 100 грамм - {{ product.productCalorie }}
+                Содержание калорий на 100 грамм - {{ p.productCalorie }}
             </p>
         </div>
         <div class="wrapper-btn" style="margin-top: 50px">
@@ -12,15 +12,16 @@
             </button>
         </div>
     </div>
-    <br />
-    <div>
+    <br/>
+    <div *ngIf="calculatedCalories | async as calories">
         <p
             class="calorie"
             style="font-size: 18px; color: black; display: block"
-            *ngIf="isShowAmountGrams && calculatedCalories !== '0.00'"
+            *ngIf="isShowAmountGrams && calories !== defaultCalorie"
         >
             Для восполнения суточной нормы калорий необходимо употребить
-            {{ calculatedCalories }} грамм
+            {{ calories }} грамм
         </p>
     </div>
 </div>
+

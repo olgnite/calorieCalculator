@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import { CalculatorDailyCalorieComponent } from './components/calculator-daily-calorie/calculator-daily-calorie.component';
+import { MortgageCalculatorComponent } from "./components/mortgage-calculator/mortgage-calculator.component";
 
 const routes: Routes = [
-    // { path: '', component: AppComponent },
-    { path: 'daily-rate', component: CalculatorDailyCalorieComponent }
+    { path: 'daily-rate', component: CalculatorDailyCalorieComponent },
+	{ path: 'mortgage', component: MortgageCalculatorComponent }
 ];
 
 @NgModule({

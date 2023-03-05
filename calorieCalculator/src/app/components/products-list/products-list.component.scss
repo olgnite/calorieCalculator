@@ -1,4 +1,7 @@
 .wrapper-list {
+    text-align: end;
+    margin-right: 10%;
+    padding-top: 30px;
     .products-select {
         padding: 0 10em 0 0;
         margin: 7%;
@@ -13,6 +16,7 @@
         border-radius: 6px;
         width: 35%;
         height: 35px;
+        transition: all 0.5s ease-in-out;
     }
 
     .products-select option {

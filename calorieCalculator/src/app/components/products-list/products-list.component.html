@@ -2,13 +2,15 @@
     <ng-container>
         <select class="products-select" (change)="productNameHandler($event)">
             <option value="">Выберите продукт</option>
-            <option *ngFor="let p of products; let i = index" [value]="i + 1">
-                {{ p.productName }}
+            <option *ngFor="let product of products | async; let i = index" [value]="i + 1">
+                <ng-container *ngIf="product">
+                    {{ product.productName }}
+                </ng-container>
             </option>
         </select>
     </ng-container>
 </div>
-<br />
 <div>
-    <app-product-card [product]="product"></app-product-card>
+    <app-product-card [product]="product$"></app-product-card>
 </div>
+

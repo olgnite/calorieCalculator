@@ -1,14 +1,17 @@
+import { ChangeDetectionStrategy } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { regularNum } from 'src/app/constData';
 import { ICalculatorType } from 'src/app/interfaces/calculatorType.interface';
-import { CalculatorCalorieService } from 'src/app/services/calculatorCalorie.service';
+import { CalculatorCalorieService } from 'src/app/services/calculator-calorie.service';
 import { calculatorTypes } from './../../constData';
 
 @Component({
     selector: 'app-form-options',
     templateUrl: './form-options.component.html',
-    styleUrls: ['./form-options.component.scss']
+    styleUrls: ['./form-options.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FormOptionsComponent implements OnInit {
     public form: FormGroup | undefined;

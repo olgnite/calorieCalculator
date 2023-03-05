@@ -9,9 +9,7 @@
                     formControlName="weight"
                 />
             </div>
-            <app-validation
-                [controls]="form.controls['weight']"
-            ></app-validation>
+            <app-validation [controls]="form.controls['weight']"/>
             <div class="height">
                 <input
                     id="height"
@@ -20,9 +18,7 @@
                     formControlName="height"
                 />
             </div>
-            <app-validation
-                [controls]="form.controls['height']"
-            ></app-validation>
+            <app-validation [controls]="form.controls['height']"/>
             <div class="age">
                 <input
                     id="age"
@@ -31,7 +27,7 @@
                     formControlName="age"
                 />
             </div>
-            <app-validation [controls]="form.controls['age']"></app-validation>
+            <app-validation [controls]="form.controls['age']"/>
             <div class="custom-select">
                 <select
                     class="sex"
@@ -51,12 +47,12 @@
                     </option>
                 </select>
             </div>
-            <br />
+            <br/>
             <button type="submit" class="btn" [disabled]="form.invalid">
                 Рассчитать
             </button>
         </div>
-        <br />
+        <br/>
         <div class="answer-calorie" *ngIf="isShowDailyRate">
             <p
                 class="calorie"

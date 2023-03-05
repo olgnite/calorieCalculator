@@ -5,7 +5,11 @@ export const routes: IRoute[] = [
     {
         path: '/daily-rate',
         label: 'Калькулятор суточной нормы калорий'
-    }
+    },
+	{
+		path: '/mortgage',
+		label: 'Ипотечный калькулятор'
+	}
 ]
 
 export const regularNum: RegExp = /^[0-9]*[.,]?[0-9]+$/

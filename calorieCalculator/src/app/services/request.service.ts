@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
-import { map, Observable, of, tap } from "rxjs";
+import { catchError, map, Observable, of, tap, throwError } from "rxjs";
 import { IProduct, IProductsRequest } from "../interfaces/product.interface";
 import { BASE_URL } from "../tokens/baseUrl.token";
 import { CacheService } from "./cache.service";
@@ -31,6 +31,10 @@ export class RequestService {
                             productId: v.id
                         }));
                         return products;
+                    }),
+                    catchError((error) => {
+                        console.log('Request error...', error);
+                        return throwError(error);
                     })
                 )
         }
@@ -46,6 +50,10 @@ export class RequestService {
                         productCalorie: p.product_calorie,
                         grams: p.grams
                     }
+                }),
+                catchError((error) => {
+                    console.log('Request error...', error);
+                    return throwError(error);
                 })
             )
     }

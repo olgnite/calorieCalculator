@@ -1,6 +1,7 @@
 .wrapper-sidebar {
     transition: all 0.5s;
     -webkit-transition: all 0.25s;
+
     .btn-close {
         position: absolute;
         right: 10px;
@@ -82,8 +83,7 @@
 
 .btn-open {
     left: 45px;
-    // top: 7px;
-    padding-top: 14px;
+    padding-top: 39px;
     font-size: 3em;
     font-weight: 800;
     z-index: 111;
