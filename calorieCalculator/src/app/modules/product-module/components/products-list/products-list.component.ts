@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { RequestService } from 'src/app/services/request.service';
-import { IProduct } from '../../interfaces/product.interface';
+import { IProduct } from '../../../../interfaces/product.interface';
 import { BehaviorSubject, Observable, of, switchMap, takeUntil } from "rxjs";
-import { DestroyService } from "../../services/destroy.service";
+import { DestroyService } from "../../../../shared/services/destroy.service";
+import { RequestService } from "../../../../shared/services/request.service";
 
 @Component({
 	selector: 'app-products-list',
@@ -24,8 +24,8 @@ export class ProductsListComponent implements OnInit {
 	}
 
 	public ngOnInit(): void {
-		const cacheProductIndex: number = 1
-		this.products = this.requestService.getProducts(cacheProductIndex)
+		const cacheProductIndex: number = 1;
+		this.products = this.requestService.getProducts(cacheProductIndex);
 	}
 
 	public productNameHandler(e: Event): void {

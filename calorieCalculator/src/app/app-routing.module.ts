@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CalculatorDailyCalorieComponent } from './components/calculator-daily-calorie/calculator-daily-calorie.component';
 import { MortgageCalculatorComponent } from "./components/mortgage-calculator/mortgage-calculator.component";
 
 const routes: Routes = [
-    { path: 'daily-rate', component: CalculatorDailyCalorieComponent },
-	{ path: 'mortgage', component: MortgageCalculatorComponent }
+	{path: 'mortgage', component: MortgageCalculatorComponent},
+	{
+		path: 'daily-rate',
+		loadChildren: () => import('./modules/product-module/product.module').then((module) => module.ProductModule)
+	},
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

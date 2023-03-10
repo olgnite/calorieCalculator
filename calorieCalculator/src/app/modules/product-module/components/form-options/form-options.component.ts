@@ -2,10 +2,10 @@ import { ChangeDetectionStrategy } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { regularNum } from 'src/app/constData';
-import { ICalculatorType } from 'src/app/interfaces/calculatorType.interface';
-import { CalculatorCalorieService } from 'src/app/services/calculator-calorie.service';
-import { calculatorTypes } from './../../constData';
+
+import { calculatorTypes, regularNum } from '../../../../constData';
+import { ICalculatorType } from "../../../../interfaces/calculatorType.interface";
+import { CalculatorCalorieService } from "../../services/calculator-calorie.service";
 
 @Component({
     selector: 'app-form-options',

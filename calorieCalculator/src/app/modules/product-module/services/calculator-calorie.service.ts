@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable, of } from "rxjs";
-import { Gender } from "../enums/gender.enum";
-import { calculatorTypes } from "../constData";
-import { ICalculatorType } from "../interfaces/calculatorType.interface";
+import { Gender } from "../../../enums/gender.enum";
+import { calculatorTypes } from "../../../constData";
+import { ICalculatorType } from "../../../interfaces/calculatorType.interface";
 
 @Injectable()
 export class CalculatorCalorieService {

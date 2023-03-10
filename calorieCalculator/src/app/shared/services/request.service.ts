@@ -1,8 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
 import { catchError, map, Observable, of, tap, throwError } from "rxjs";
-import { IProduct, IProductsRequest } from "../interfaces/product.interface";
-import { BASE_URL } from "../tokens/baseUrl.token";
+import { IProduct, IProductsRequest } from "../../interfaces/product.interface";
+import { BASE_URL } from "../../tokens/baseUrl.token";
 import { CacheService } from "./cache.service";
 
 @Injectable()

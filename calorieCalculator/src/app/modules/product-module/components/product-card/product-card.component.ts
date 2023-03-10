@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, Inject, Input } from '@angular/core';
-import { CalculatorCalorieService } from 'src/app/services/calculator-calorie.service';
-import { IProduct } from '../../interfaces/product.interface';
-import { DEFAULT_CALORIE } from "../../tokens/defaultCalorie.token";
+import { IProduct } from '../../../../interfaces/product.interface';
+import { DEFAULT_CALORIE } from "../../../../tokens/defaultCalorie.token";
 import { BehaviorSubject, Observable, take, takeUntil, tap } from "rxjs";
-import { DestroyService } from "../../services/destroy.service";
+import { DestroyService } from "../../../../shared/services/destroy.service";
+import { CalculatorCalorieService } from "../../services/calculator-calorie.service";
 
 @Component({
 	selector: 'app-product-card',
@@ -41,6 +41,7 @@ export class ProductCardComponent {
 			}),
 			takeUntil(this.destroy)
 		).subscribe();
+
 		this.calculatedCalories.subscribe((calorie: string) => {
 			if (calorie === this.defaultCalorie) {
 				alert('Пожалуйста рассчитайте дневную норму калорий!');

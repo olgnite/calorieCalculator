@@ -6,20 +6,13 @@ import { HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {
-	CalculatorDailyCalorieComponent
-} from './components/calculator-daily-calorie/calculator-daily-calorie.component';
-import { FormOptionsComponent } from './components/form-options/form-options.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LayoutComponent } from './components/layout/layout.component';
-import { ProductCardComponent } from './components/product-card/product-card.component';
-import { ProductsListComponent } from './components/products-list/products-list.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { ValidationComponent } from './components/validation/validation.component';
-import { CacheService } from './services/cache.service';
-import { RequestService } from './services/request.service';
-import { CalculatorCalorieService } from './services/calculator-calorie.service';
-import { SearchPipe } from "./pipes/search.pipe";
+import { CacheService } from './shared/services/cache.service';
+import { RequestService } from './shared/services/request.service';
+import { CalculatorCalorieService } from './modules/product-module/services/calculator-calorie.service';
+import { SearchPipe } from "./shared/pipes/search.pipe";
 import { MortgageCalculatorComponent } from './components/mortgage-calculator/mortgage-calculator.component';
 
 
@@ -29,11 +22,6 @@ import { MortgageCalculatorComponent } from './components/mortgage-calculator/mo
 		LayoutComponent,
 		HeaderComponent,
 		SidebarComponent,
-		CalculatorDailyCalorieComponent,
-		ProductsListComponent,
-		FormOptionsComponent,
-		ValidationComponent,
-		ProductCardComponent,
 		SearchPipe,
 		MortgageCalculatorComponent,
 	],
@@ -49,6 +37,9 @@ import { MortgageCalculatorComponent } from './components/mortgage-calculator/mo
 		CalculatorCalorieService,
 		RequestService,
 		CacheService
+	],
+	exports: [
+		CommonModule
 	],
 	bootstrap: [AppComponent]
 })
