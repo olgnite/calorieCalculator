@@ -3,7 +3,7 @@
         <button class="btn-close" (click)="showSidebarHandler()">
             &times;
         </button>
-        <div class="routers" *ngFor="let i of sidebarRoutes">
+        <div class="routers" *ngFor="let i of sidebarRoutes | async">
             <a [routerLink]="[i.path]" (click)="showSidebarHandler()">
                 {{ i.label }}
             </a>

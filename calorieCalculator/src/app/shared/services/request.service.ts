@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
 import { catchError, map, Observable, of, tap, throwError } from "rxjs";
-import { IProduct, IProductsRequest } from "../../interfaces/product.interface";
+import { IProduct, IProductsRequest } from "../interfaces/product.interface";
 import { BASE_URL } from "../../tokens/baseUrl.token";
 import { CacheService } from "./cache.service";
 
@@ -23,7 +23,7 @@ export class RequestService {
                         this.cacheService.setCacheData<IProductsRequest[]>(key, p)
                     }),
                     map((p: IProductsRequest[]) => {
-                        const products: IProduct[] = []
+                        const products: IProduct[] = [];
                         p.forEach((v: IProductsRequest) => products.push({
                             productName: v.product_name,
                             productCalorie: v.product_calorie,

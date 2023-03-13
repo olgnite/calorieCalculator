@@ -42,7 +42,7 @@
             <div class="custom-select">
                 <select class="calculatorType" formControlName="calculatorType">
                     <option value="">Выберите тип нагрузки</option>
-                    <option *ngFor="let t of types" [value]="t.workType">
+                    <option *ngFor="let t of types | async" [value]="t.workType">
                         {{ t.workType }}
                     </option>
                 </select>
@@ -59,7 +59,7 @@
                 style="font-size: 18px; color: black; display: block"
             >
                 Примерная суточная норма калорий -
-                {{ calories }}
+                {{ calculatorCalorie.calories | async }}
             </p>
         </div>
     </form>

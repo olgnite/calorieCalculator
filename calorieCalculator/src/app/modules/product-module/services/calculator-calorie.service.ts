@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable, of } from "rxjs";
-import { Gender } from "../../../enums/gender.enum";
+import { Gender } from "../../../shared/enums/gender.enum";
 import { calculatorTypes } from "../../../constData";
-import { ICalculatorType } from "../../../interfaces/calculatorType.interface";
+import { ICalculatorType } from "../../../shared/interfaces/calculatorType.interface";
 
 @Injectable()
 export class CalculatorCalorieService {
@@ -25,7 +25,7 @@ export class CalculatorCalorieService {
     }
 
     public getDayGrams(dailyCalories: number, productCalories: number, grams: number): Observable<string> {
-		const daysGrams: string = (dailyCalories / productCalories * grams).toFixed(2);
+        const daysGrams: string = (dailyCalories / productCalories * grams).toFixed(2);
 
         return of(daysGrams);
     }

@@ -1,5 +1,5 @@
-import { ICalculatorType } from "./interfaces/calculatorType.interface";
-import { IRoute } from "./interfaces/routes.interface";
+import { ICalculatorType } from "./shared/interfaces/calculatorType.interface";
+import { IRoute } from "./shared/interfaces/routes.interface";
 
 export const routes: IRoute[] = [
     {

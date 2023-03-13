@@ -7,9 +7,8 @@ export class CacheService {
     public getCacheData<T>(key: string): T {
         return this.cacheList.get(key);
     }
-
-    public setCacheData<T>(key: string, data: T): void {
-        this.cacheList.set(key, data);
-    }
+	
+	public setCacheData<T>(key: string, data: T): void {
+		this.cacheList.set(key, data);
+	}
 }
-
